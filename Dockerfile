@@ -13,7 +13,7 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
-# Install requirements.
+# Install requirements
 RUN yum -y install rpm dnf-plugins-core \
  && yum -y update \
  && yum -y config-manager --set-enabled powertools \
@@ -27,6 +27,7 @@ RUN yum -y install rpm dnf-plugins-core \
       python3 \
       python3-pip \
       python3-pyyaml \
+      git \
       iproute \
  && yum clean all
 
