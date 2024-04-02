@@ -2,7 +2,7 @@ FROM rockylinux:8
 LABEL maintainer="Bart Smeding"
 ENV container=docker
 
-ENV pip_packages "ansible ansible-lint yamllint"
+ENV pip_packages "ansible==5.10.0 ansible-lint==5.4.0 yamllint"
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN rm -f /lib/systemd/system/multi-user.target.wants/*;\
@@ -28,14 +28,12 @@ RUN yum -y install rpm dnf-plugins-core \
       python3 \
       python3-pip \
       python3-pyyaml \
+      python3-wheel-wheel \
       iproute \
  && yum clean all
 
 # Upgrade pip
 RUN pip3 install --upgrade pip wheel
-
-# Install setuptools
-RUN pip3 install setuptools
 
 # Install pip packages
 RUN pip3 install $pip_packages
