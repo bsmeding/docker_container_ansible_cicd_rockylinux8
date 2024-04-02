@@ -2,7 +2,7 @@ FROM rockylinux:8
 LABEL maintainer="Bart Smeding"
 ENV container=docker
 
-ENV pip_packages "ansible"
+ENV pip_packages "ansible ansible-lint"
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN rm -f /lib/systemd/system/multi-user.target.wants/*;\
