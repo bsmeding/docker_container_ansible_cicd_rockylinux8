@@ -6,7 +6,6 @@
       push:
         branches:
           - main
-          - master
       schedule:
         - cron: "10 2 * * 0"
 
@@ -34,7 +33,7 @@
         name: Release to Docker Hub
         runs-on: ubuntu-latest
         needs: test
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
 
         steps:
           - uses: actions/checkout@v2
