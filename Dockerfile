@@ -32,7 +32,7 @@ RUN yum -y install rpm dnf-plugins-core \
  && yum clean all
 
 # Upgrade pip
-RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip wheel
 
 # Install setuptools
 RUN pip3 install setuptools
