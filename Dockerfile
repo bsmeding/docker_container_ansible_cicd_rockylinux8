@@ -34,6 +34,9 @@ RUN yum -y install rpm dnf-plugins-core \
 # Upgrade pip
 RUN pip3 install --upgrade pip
 
+# Install setuptools
+RUN pip3 install setuptools
+
 # Install pip packages
 RUN pip3 install $pip_packages
 
