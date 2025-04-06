@@ -32,6 +32,12 @@ RUN yum -y install rpm dnf-plugins-core \
       sshpass \
  && yum clean all
 
+# Add docker dependencies for using community.docker Ansible modules
+RUN dnf install -y epel-release && \
+    dnf install -y \
+    docker \
+    python3-docker \
+    && dnf clean all
 
  # Create virtual environment
 RUN python3 -m venv /opt/venv
